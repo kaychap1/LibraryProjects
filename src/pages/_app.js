@@ -1,5 +1,16 @@
-import "@/styles/globals.css";
+import { SessionProvider } from 'next-auth/react';
+import { BookProvider } from '../context/BookContext';
+import Navbar from '../components/Navbar';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  return (
+    <SessionProvider session={session}>
+      <BookProvider>
+        <Navbar />
+        <Component {...pageProps} />
+      </BookProvider>
+    </SessionProvider>
+  );
 }
+
+export default MyApp;
