@@ -1,5 +1,5 @@
 import { SessionProvider } from 'next-auth/react';
-import { BookProvider } from '../context/BookContext';
+import { BookProvider } from '../context/BookContext.js';
 import Navbar from '../components/Navbar.js';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
