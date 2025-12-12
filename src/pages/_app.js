@@ -1,6 +1,6 @@
 import { SessionProvider } from 'next-auth/react';
-import { BookProvider } from 'src/context/BookContext.js';
-import Navbar from 'src/components/Navbar.js';
+import { BookProvider } from '../context/BookContext.js';
+import Navbar from '../components/Navbar.js';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
